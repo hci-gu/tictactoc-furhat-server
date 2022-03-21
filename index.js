@@ -11,8 +11,7 @@ var zmq = require("zeromq"),
   sock = zmq.socket("pull");
 
 try {
-    sock.bind('tcp://10.240.177.179:9999')
-    sock.connect("tcp://10.240.177.106:9999");
+    sock.connect("tcp://10.0.177.77:9999");
 } catch(e) {
     console.log(e)
 }
