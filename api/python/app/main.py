@@ -4,13 +4,12 @@ from flask import jsonify
 import socket
 
 ### Some global settings/variables used
-IP = "127.0.0.1"
+IP = "host.docker.internal"
 UDP_PORT = 8089 # iMotions external API
 
 def sendudp(message):
     sock=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
     sock.sendto(bytes(message,"utf-8"),(IP, UDP_PORT))
-    log.write('ExtAPI message sent: ' + message)
 
 app = Flask(__name__)
 
